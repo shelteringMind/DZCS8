@@ -341,7 +341,10 @@ int[,] GetArray(int rows, int columns)
     int iterator = 0;
     int move = 0;
 
-    changeDirection = rows >= columns ? 2 * columns - 1 : 2 * (rows - 1);
+    //changeDirection = rows >= columns ? 2 * columns - 1 : 2 * (rows - 1);
+    if(rows == columns) changeDirection = 2 * (columns - 1);
+    else if(rows > columns) changeDirection = 2 * columns - 1;
+    else if(rows < columns) changeDirection = 2 * (rows - 1);
 
     do {
         switch (currentDirection) {
